@@ -169,7 +169,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2814938347272915695, guid: f2ac1c07e469b23428449b3d9eea5a5d, type: 3}
       propertyPath: attack
-      value: 100
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2814938347272915695, guid: f2ac1c07e469b23428449b3d9eea5a5d, type: 3}
+      propertyPath: defense
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2814938347272915695, guid: f2ac1c07e469b23428449b3d9eea5a5d, type: 3}
       propertyPath: attackSpeed
@@ -179,11 +183,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7181585494383963009, guid: f2ac1c07e469b23428449b3d9eea5a5d, type: 3}
+      propertyPath: baseStats
+      value: 
+      objectReference: {fileID: 177594051}
+    - target: {fileID: 7181585494383963009, guid: f2ac1c07e469b23428449b3d9eea5a5d, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7181585494383963009, guid: f2ac1c07e469b23428449b3d9eea5a5d, type: 3}
+      propertyPath: currentHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7181585494383963009, guid: f2ac1c07e469b23428449b3d9eea5a5d, type: 3}
+      propertyPath: combatantAnimator
+      value: 
+      objectReference: {fileID: 1186564196}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5500103839168128877, guid: f2ac1c07e469b23428449b3d9eea5a5d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1186564197}
   m_SourcePrefab: {fileID: 100100000, guid: f2ac1c07e469b23428449b3d9eea5a5d, type: 3}
+--- !u!114 &177594051 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2814938347272915695, guid: f2ac1c07e469b23428449b3d9eea5a5d, type: 3}
+  m_PrefabInstance: {fileID: 37716251}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2b7b90aae78e654483f1d897c2bab3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,9 +447,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 59416152415082067, guid: 11806ed0a2c8c684e8acfe0cba20d21a, type: 3}
+      propertyPath: baseStats
+      value: 
+      objectReference: {fileID: 1743528373}
+    - target: {fileID: 59416152415082067, guid: 11806ed0a2c8c684e8acfe0cba20d21a, type: 3}
+      propertyPath: maxHealth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 59416152415082067, guid: 11806ed0a2c8c684e8acfe0cba20d21a, type: 3}
+      propertyPath: combatantType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 59416152415082067, guid: 11806ed0a2c8c684e8acfe0cba20d21a, type: 3}
+      propertyPath: currentHealth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 59416152415082067, guid: 11806ed0a2c8c684e8acfe0cba20d21a, type: 3}
+      propertyPath: combatantAnimator
+      value: 
+      objectReference: {fileID: 1128252866}
     - target: {fileID: 1787964938211353581, guid: 11806ed0a2c8c684e8acfe0cba20d21a, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316938040674767711, guid: 11806ed0a2c8c684e8acfe0cba20d21a, type: 3}
+      propertyPath: critMultiplier
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4378396674051917019, guid: 11806ed0a2c8c684e8acfe0cba20d21a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -460,8 +518,57 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1843373455363917910, guid: 11806ed0a2c8c684e8acfe0cba20d21a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1128252867}
   m_SourcePrefab: {fileID: 100100000, guid: 11806ed0a2c8c684e8acfe0cba20d21a, type: 3}
+--- !u!1 &1128252864 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1843373455363917910, guid: 11806ed0a2c8c684e8acfe0cba20d21a, type: 3}
+  m_PrefabInstance: {fileID: 653380269}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1128252866 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7096331946453464658, guid: 11806ed0a2c8c684e8acfe0cba20d21a, type: 3}
+  m_PrefabInstance: {fileID: 653380269}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1128252867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128252864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c8613d1f9088f743aacc579aa480b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationEventReceiver
+  combatant: {fileID: 1743528372}
+--- !u!1 &1186564194 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5500103839168128877, guid: f2ac1c07e469b23428449b3d9eea5a5d, type: 3}
+  m_PrefabInstance: {fileID: 37716251}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1186564196 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4015958969450518889, guid: f2ac1c07e469b23428449b3d9eea5a5d, type: 3}
+  m_PrefabInstance: {fileID: 37716251}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1186564197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186564194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c8613d1f9088f743aacc579aa480b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationEventReceiver
+  combatant: {fileID: 0}
 --- !u!1 &1300288493
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,7 +613,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c248b675f099c44995101814cbd9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CombatController
-  damageDelayTime: 0.54545456
+--- !u!114 &1743528372 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 59416152415082067, guid: 11806ed0a2c8c684e8acfe0cba20d21a, type: 3}
+  m_PrefabInstance: {fileID: 653380269}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ac679a7dda74964f938ba3f7970c4dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Combatant
+--- !u!114 &1743528373 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3316938040674767711, guid: 11806ed0a2c8c684e8acfe0cba20d21a, type: 3}
+  m_PrefabInstance: {fileID: 653380269}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc1a32609b1a8aa4da90e692fe57a625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

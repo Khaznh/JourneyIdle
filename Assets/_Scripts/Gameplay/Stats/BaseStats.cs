@@ -4,8 +4,8 @@ public class BaseStats : MonoBehaviour
 {
     [Header("Basic Stats")]
     public int health;
-    public int attack;
-    public int defense;
+    public float attack;
+    public float defense;
 
     public float attackSpeed;
     [Range(0,1)] public float evadeRate;

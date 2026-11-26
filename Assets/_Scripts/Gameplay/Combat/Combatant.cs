@@ -21,16 +21,12 @@ public class Combatant : MonoBehaviour
 
     public void Awake()
     {
-        baseStats = GetComponent<BaseStats>();
-        combatantAnimator = GetComponentInChildren<Animator>();
-        if (baseStats == null)
-        {
-            Debug.LogError("BaseStats component not found on " + gameObject.name);
-            return;
-        }
+        GetData();
+    }
 
-        maxHealth = baseStats.health;
-        currentHealth = maxHealth;
+    public void Reset()
+    {
+        GetData();
     }
 
     public void Update()
@@ -58,7 +54,7 @@ public class Combatant : MonoBehaviour
         while (timer >= interval)
         {
             timer = 0;
-            CombatController.Instance.Attack(this, enemy, baseStats);
+            CombatController.Instance.Attack(this);
         }
     }
 
@@ -82,6 +78,15 @@ public class Combatant : MonoBehaviour
     {
         gameObject.SetActive(false);
         Debug.Log(gameObject.name + " has died.");
+    }
+
+    public void GetData()
+    {
+        baseStats = GetComponent<BaseStats>();
+        combatantAnimator = GetComponentInChildren<Animator>();
+
+        maxHealth = baseStats.health;
+        currentHealth = maxHealth;
     }
 }
 

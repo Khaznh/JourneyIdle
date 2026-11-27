@@ -128,6 +128,10 @@ MonoBehaviour:
   defense: 0
   attackSpeed: 1
   evadeRate: 0
+  counterRate: 0
+  critRate: 0
+  critMultiplier: 2
+  lifeSteal: 0
 --- !u!114 &59416152415082067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,10 +144,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ac679a7dda74964f938ba3f7970c4dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Combatant
-  baseStats: {fileID: 0}
-  maxHealth: 0
-  currentHealth: 0
+  baseStats: {fileID: 3316938040674767711}
+  maxHealth: 5
+  currentHealth: 5
   combatantType: 1
+  enemy: {fileID: 0}
+  combatantAnimator: {fileID: 7096331946453464658}
 --- !u!1 &2795833901461189042
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,6 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b6523b3caf3ca840b5ad922c47943fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CombatantAttackRange
+  combatant: {fileID: 0}
 --- !u!1 &6802745366930207705
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,10 +1047,36 @@ PrefabInstance:
     - {fileID: 4372208264540549760, guid: 6bb8de797b6370549aa5e102ed9e4f2a, type: 3}
     - {fileID: 8293533388791326003, guid: 6bb8de797b6370549aa5e102ed9e4f2a, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 64891701, guid: 6bb8de797b6370549aa5e102ed9e4f2a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3994763683411217123}
   m_SourcePrefab: {fileID: 100100000, guid: 6bb8de797b6370549aa5e102ed9e4f2a, type: 3}
+--- !u!1 &1843373455363917910 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 64891701, guid: 6bb8de797b6370549aa5e102ed9e4f2a, type: 3}
+  m_PrefabInstance: {fileID: 1843373455316607843}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3994763683411217123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843373455363917910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c8613d1f9088f743aacc579aa480b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationEventReceiver
+  combatant: {fileID: 59416152415082067}
 --- !u!4 &6011402311417880253 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5402121532304637406, guid: 6bb8de797b6370549aa5e102ed9e4f2a, type: 3}
+  m_PrefabInstance: {fileID: 1843373455316607843}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7096331946453464658 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8930574472811550001, guid: 6bb8de797b6370549aa5e102ed9e4f2a, type: 3}
   m_PrefabInstance: {fileID: 1843373455316607843}
   m_PrefabAsset: {fileID: 0}

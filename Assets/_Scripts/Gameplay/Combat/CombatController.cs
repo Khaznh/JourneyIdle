@@ -36,7 +36,7 @@ public class CombatController : Singleton<CombatController>
 
         float attackPercenAfterDefValue = (attackValue * 100) / (100 + defender.baseStats.defense);
 
-        defender.currentHealth -= (int)attackPercenAfterDefValue;
+        defender.TakeDamage((int)attackPercenAfterDefValue);
     }
 
     private float GetClipLength(Animator anim, string clipName)

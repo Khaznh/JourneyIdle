@@ -1,5 +1,7 @@
+using System;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Combatant : MonoBehaviour
 {
@@ -29,6 +31,11 @@ public class Combatant : MonoBehaviour
         GetData();
     }
 
+    public void Start()
+    {
+        EventManager.Instance.OnHealthCombatantChange(this, currentHealth, maxHealth);
+    }
+
     public void Update()
     {
         if (currentHealth <= 0)
@@ -56,6 +63,12 @@ public class Combatant : MonoBehaviour
             timer = 0;
             CombatController.Instance.Attack(this);
         }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        EventManager.Instance.OnHealthCombatantChange(this, currentHealth, maxHealth);
     }
 
     public void UpdateEnemy(Combatant combatant)

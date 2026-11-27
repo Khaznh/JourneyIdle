@@ -337,8 +337,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
   health: 10
   attack: 1
-  defense: 5
-  attackSpeed: 1.4
+  defense: 0
+  attackSpeed: 1.5
   evadeRate: 0
   counterRate: 0
   critRate: 0
@@ -356,11 +356,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ac679a7dda74964f938ba3f7970c4dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Combatant
-  baseStats: {fileID: 0}
-  maxHealth: 0
-  currentHealth: 0
+  baseStats: {fileID: 2814938347272915695}
+  maxHealth: 10
+  currentHealth: 10
   combatantType: 0
   enemy: {fileID: 0}
+  combatantAnimator: {fileID: 4015958969450518889}
 --- !u!1 &8092133681478014848
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,10 +1063,36 @@ PrefabInstance:
     - {fileID: 4372208264540549760, guid: 6bb8de797b6370549aa5e102ed9e4f2a, type: 3}
     - {fileID: 8293533388791326003, guid: 6bb8de797b6370549aa5e102ed9e4f2a, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 64891701, guid: 6bb8de797b6370549aa5e102ed9e4f2a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5138552715125640138}
   m_SourcePrefab: {fileID: 100100000, guid: 6bb8de797b6370549aa5e102ed9e4f2a, type: 3}
 --- !u!4 &480895206611186054 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5402121532304637406, guid: 6bb8de797b6370549aa5e102ed9e4f2a, type: 3}
   m_PrefabInstance: {fileID: 5500103839191059544}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &4015958969450518889 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8930574472811550001, guid: 6bb8de797b6370549aa5e102ed9e4f2a, type: 3}
+  m_PrefabInstance: {fileID: 5500103839191059544}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5500103839168128877 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 64891701, guid: 6bb8de797b6370549aa5e102ed9e4f2a, type: 3}
+  m_PrefabInstance: {fileID: 5500103839191059544}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5138552715125640138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5500103839168128877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c8613d1f9088f743aacc579aa480b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationEventReceiver
+  combatant: {fileID: 0}
